@@ -185,7 +185,7 @@ public:
             return makeEmptyInt16Array();
         }
 
-        return emscripten::val(emscripten::typed_memory_view(static_cast<size_t>(written), mixBuffer.data()));
+        return emscripten::val(emscripten::typed_memory_view(static_cast<size_t>(written) * channels, mixBuffer.data()));
     }
 
     bool reset()
